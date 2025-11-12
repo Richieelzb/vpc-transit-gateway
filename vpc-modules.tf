@@ -1,4 +1,4 @@
-module "vpc1" {
+module "VPC-A" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.17.0"
 
@@ -26,7 +26,7 @@ module "vpc1" {
   tags = local.common_tags
 }
 
-module "vpc2" {
+module "VPC-B" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.17.0"
 
@@ -54,3 +54,30 @@ module "vpc2" {
   tags = local.common_tags
 }
 
+module "VPC-C" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.17.0"
+
+
+  name = "${local.Name}-${var.vpc_name_vpc3}"
+  cidr = var.vpc_cidr_block_vpc3
+
+  azs             = var.vpc_availability_zones_vpc3
+  private_subnets = var.vpc_private_subnets_vpc3
+  public_subnets  = var.vpc_public_subnets_vpc3
+
+  manage_default_network_acl    = false
+  manage_default_route_table    = false
+  manage_default_security_group = false
+
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  enable_nat_gateway = var.vpc_enable_nat_gateway_vpc3
+  single_nat_gateway = var.vpc_single_nat_gateway_vpc3
+
+  enable_dhcp_options     = true
+  map_public_ip_on_launch = true
+
+  tags = local.common_tags
+}
