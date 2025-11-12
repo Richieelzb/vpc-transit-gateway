@@ -34,10 +34,12 @@ variable "vpc_private_subnets_vpc1" {
 
 variable "vpc_enable_nat_gateway_vpc1" {
   type = bool
+  default = false
 }
 
 variable "vpc_single_nat_gateway_vpc1" {
   type = bool
+  default = true
 }
 
 ///VPC Modules-2 ///////////////////////////////////////////////////////////////////////////
@@ -105,7 +107,7 @@ variable "vpc_enable_nat_gateway_vpc3" {
 
 variable "vpc_single_nat_gateway_vpc3" {
   type    = bool
-  default = false
+  default = true
 }
 
 
