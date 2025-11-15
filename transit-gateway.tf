@@ -11,19 +11,19 @@ resource "aws_ec2_transit_gateway" "tgw-lzb" {
 resource "aws_ec2_transit_gateway_vpc_attachment" "vpc1_attach" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw-lzb.id
   vpc_id             = module.VPC-A.vpc_id
-  subnet_ids         = [module.VPC-A.private_subnets]
+  subnet_ids         = [module.VPC-A.private_subnets[0]]
 }
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "vpc2_attach" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw-lzb.id
   vpc_id             = module.VPC-B.vpc_id
-  subnet_ids         = [module.VPC-B.private_subnets]
+  subnet_ids         = [module.VPC-B.private_subnets[0]]
 }
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "vpc3_attach" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw-lzb.id
   vpc_id             = module.VPC-C.vpc_id
-  subnet_ids         = [module.VPC-C.private_subnets]
+  subnet_ids         = [module.VPC-C.private_subnets[0]]
 }
 
 
