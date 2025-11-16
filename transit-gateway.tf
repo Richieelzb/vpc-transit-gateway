@@ -4,7 +4,7 @@ resource "aws_ec2_transit_gateway" "tgw-lzb" {
   amazon_side_asn = 64512
   auto_accept_shared_attachments = "enable"
   default_route_table_association = "enable"
-  default_route_table_propagation = "enable"
+  default_route_table_propagation = "disable"
 }
 
 # 2. Attach VPCs to TGW
