@@ -3,6 +3,7 @@ vpc_name_vpc1       = "VPC-A"
 vpc_cidr_block_vpc1 = "10.10.0.0/16"
 //vpc_availability_zones_vpc1 = ["eu-west-1a", "eu-west-1b"]           //personal
 vpc_availability_zones_vpc1 = ["ap-south-1a"] //sandbox
+vpc_public_subnets_vpc1     = ["10.10.1.0/24"]
 vpc_private_subnets_vpc1    = ["10.10.0.0/24"]
 
 # VPC2 Variables
